@@ -9,7 +9,7 @@ import PIL
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 st.set_page_config(page_title="Father's Day", layout="wide")
 
@@ -74,7 +74,7 @@ def send_email(selections):
     message = MIMEMultipart()
     message["From"] = email
     message["To"] = email
-    message["Subject"] = f"Father's Day Menu Selection - {datetime.now(tz = -4).strftime('%Y-%m-%d %H:%M')}"
+    message["Subject"] = f"Father's Day Menu Selection - {datetime.now(timezone(timedelta(hours=-4))).strftime('%Y-%m-%d %H:%M')}"
     
     # Create email body
     body = "Father's Day Menu Selections:\n\n"
