@@ -1,2 +1,2 @@
-Pillow==11.2.1
-streamlit_js_eval==0.1.7
+Pillow
+streamlit_js_eval
