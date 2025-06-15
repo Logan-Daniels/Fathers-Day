@@ -67,8 +67,8 @@ def fix_image_orientation(image):
     return image
 
 def send_email(selections):
-    email = "my@gmail.com"
-    sender_password = "my_password" 
+    email = st.secrets["email"]
+    sender_password = st.secrets["email_password"]
 
     # Create message
     message = MIMEMultipart()
@@ -252,7 +252,7 @@ if st.session_state.photos and "screen_height" in st.session_state:
         st.rerun()
 
     # Display current photo info
-    st.write(f"Photo {st.session_state.photo_index + 1} of {len(st.session_state.photos)}: {st.session_state.photos[st.session_state.photo_index]}")
+    #st.write(f"Photo {st.session_state.photo_index + 1} of {len(st.session_state.photos)}: {st.session_state.photos[st.session_state.photo_index]}")
 
 elif st.session_state.photos:
     st.write("Loading screen dimensions...")
