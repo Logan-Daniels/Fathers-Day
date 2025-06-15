@@ -74,7 +74,7 @@ def send_email(selections):
     message = MIMEMultipart()
     message["From"] = email
     message["To"] = email
-    message["Subject"] = f"Father's Day Menu Selection - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+    message["Subject"] = f"Father's Day Menu Selection - {datetime.now(tz = -4).strftime('%Y-%m-%d %H:%M')}"
     
     # Create email body
     body = "Father's Day Menu Selections:\n\n"
